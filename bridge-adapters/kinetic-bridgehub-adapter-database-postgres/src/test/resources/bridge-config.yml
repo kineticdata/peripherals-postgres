@@ -5,8 +5,8 @@ Bridge Configuration:
     Username: ""
     Password: ""
     Server: ""
-    Port: ""
-    Prognum: ""
+    Port: "5432"
+    Database Name: ""
 
 # Setting the different request configurations for the Standard Bridgehub tests
     # Structure: Structure string
@@ -16,8 +16,8 @@ Bridge Configuration:
     # Single Value Query: A bridge query that ALWAYS return one value
     # Multiple Value Query: A bridge query that returns multiple values
 Test Request Configuration:
-    Structure: ""
-    Fields: ""
+    Structure: "mytesttable"
+    Fields: "id,Name,Description"
     Empty Value Query: ""
     Single Value Query: ""
     Multiple Value Query: ""
