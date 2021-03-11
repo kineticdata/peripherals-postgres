@@ -33,28 +33,6 @@
         <developerConnection>scm:git:https://github.com/kineticdata/kinetic-bridgehub-adapter-database-postgres.git</developerConnection>
     </scm>
 
-    <distributionManagement>
-        <repository>
-            <id>com.kineticdata.public</id>
-            <url>s3://maven-repo-public-kineticdata.com/releases</url>
-        </repository>
-        <snapshotRepository>
-            <id>com.kineticdata.public</id>
-            <url>s3://maven-repo-public-kineticdata.com/snapshots</url>
-        </snapshotRepository>
-    </distributionManagement>
-    
-    <repositories>
-        <repository>
-            <id>z1_com.kineticdata.public</id>
-            <url>https://s3.amazonaws.com/maven-repo-public-kineticdata.com/releases</url>
-        </repository>
-        <repository>
-            <id>z2_com.kineticdata.public</id>
-            <url>https://s3.amazonaws.com/maven-repo-public-kineticdata.com/snapshots</url>
-        </repository>
-    </repositories>
-
     <dependencies>
         <dependency>
             <groupId>com.kineticdata.bridges.adapter</groupId>
