@@ -3,8 +3,29 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.kineticdata.bridgehub.adapter.sql</groupId>
     <artifactId>kinetic-bridgehub-adapter-database-postgres</artifactId>
-    <version>1.0.1</version>
+    <version>1.1.0</version>
     <packaging>jar</packaging>
+    
+    <distributionManagement>
+        <repository>
+            <id>z1_com.kineticdata.public</id>
+            <url>s3://maven-repo-public-kineticdata.com/releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>z1_com.kineticdata.public</id>
+            <url>s3://maven-repo-public-kineticdata.com/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+    <!-- 
+      repo ids are prefixed with z to control maven repo usage order.
+      We want maven central to be used first as most dependencies are stored there.
+    -->
+    <repositories>
+        <repository>
+          <id>z1_com.kineticdata.public</id>
+          <url>https://s3.amazonaws.com/maven-repo-public-kineticdata.com/releases</url>
+        </repository>
+    </repositories>
 
     <name>kinetic-bridgehub-adapter-database-postgres</name>
     <scm>
@@ -50,11 +71,11 @@
             <artifactId>commons-lang</artifactId>
             <version>2.6</version>
         </dependency>
-		<dependency>
-			<groupId>postgresql</groupId>
-			<artifactId>postgresql</artifactId>
-			<version>9.1-901-1.jdbc4</version>
-		</dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.2.16</version>
+        </dependency>
         <dependency>
             <groupId>com.kineticdata.bridgehub.adapter</groupId>
             <artifactId>kinetic-bridgehub-adapter-database</artifactId>
