@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.kineticdata.bridgehub.adapter.sql</groupId>
     <artifactId>kinetic-bridgehub-adapter-database-postgres</artifactId>
-    <version>1.1.0</version>
+    <version>1.1.1</version>
     <packaging>jar</packaging>
     
     <distributionManagement>
@@ -29,8 +29,8 @@
 
     <name>kinetic-bridgehub-adapter-database-postgres</name>
     <scm>
-        <connection>scm:git:https://github.com/kineticdata/kinetic-bridgehub-adapter-database-postgres.git</connection>
-        <developerConnection>scm:git:https://github.com/kineticdata/kinetic-bridgehub-adapter-database-postgres.git</developerConnection>
+        <connection>scm:git:https://github.com/kineticdata/peripherals-postgres.git</connection>
+        <developerConnection>scm:git:https://github.com/kineticdata/peripherals-postgres.git</developerConnection>
     </scm>
 
     <dependencies>
@@ -57,7 +57,7 @@
         <dependency>
             <groupId>com.kineticdata.bridgehub.adapter</groupId>
             <artifactId>kinetic-bridgehub-adapter-database</artifactId>
-            <version>[1.0.1,)</version>
+            <version>[1.0.4,)</version>
             <exclusions>
                 <exclusion>
                     <groupId>mysql</groupId>
@@ -70,7 +70,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.6</maven.compiler.source>
         <maven.compiler.target>1.6</maven.compiler.target>
-    <maven.build.timestamp.format>yyyy-MM-dd HH:mm</maven.build.timestamp.format>
+        <maven.build.timestamp.format>yyyy-MM-dd HH:mm</maven.build.timestamp.format>
     </properties>
     <build>
         <extensions>
