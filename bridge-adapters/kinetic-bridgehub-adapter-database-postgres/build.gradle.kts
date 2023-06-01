@@ -1,6 +1,10 @@
+import java.text.SimpleDateFormat
+import java.util.Date
+
 plugins {
   java
   `maven-publish`
+    id("net.nemerosa.versioning") version "2.14.0"
 }
 
 repositories {
@@ -39,14 +43,14 @@ repositories {
 }
 
 dependencies {
-  implementation("com.kineticdata.bridges.adapter:kinetic-bridgehub-adapter:1.2.1-SNAPSHOT")
+  implementation("com.kineticdata.agent:kinetic-agent-adapter:1.1.3")
   implementation("org.slf4j:slf4j-api:1.7.10")
   implementation("org.postgresql:postgresql:42.3.7")
   implementation("com.kineticdata.bridgehub.adapter:kinetic-bridgehub-adapter-database:1.0.5-SNAPSHOT")
 }
 
 group = "com.kineticdata.bridgehub.adapter.sql"
-version = "1.1.2-SNAPSHOT"
+version = "1.1.2"
 description = "kinetic-bridgehub-adapter-database-postgres"
 java.sourceCompatibility = JavaVersion.VERSION_1_8
 
@@ -68,4 +72,21 @@ publishing {
 
 tasks.withType<JavaCompile>() {
   options.encoding = "UTF-8"
+}
+versioning {
+  gitRepoRootDir = "../../"
+}
+tasks.processResources {
+  duplicatesStrategy = DuplicatesStrategy.INCLUDE
+  val currentDate = SimpleDateFormat("yyyy-MM-dd").format(Date())
+  from("src/main/resources"){
+    filesMatching("**/*.version") {    
+      expand(    
+        "buildNumber" to versioning.info.build,
+        "buildDate" to currentDate,    
+        "timestamp" to System.currentTimeMillis(),    
+        "version" to project.version    
+      )    
+    }
+  }
 }
