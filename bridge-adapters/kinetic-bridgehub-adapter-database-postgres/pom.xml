@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.kineticdata.bridgehub.adapter.sql</groupId>
     <artifactId>kinetic-bridgehub-adapter-database-postgres</artifactId>
-    <version>1.1.1</version>
+    <version>1.1.2</version>
     <packaging>jar</packaging>
-    
+
     <distributionManagement>
         <repository>
             <id>z1_com.kineticdata.public</id>
@@ -22,8 +24,8 @@
     -->
     <repositories>
         <repository>
-          <id>z1_com.kineticdata.public</id>
-          <url>https://s3.amazonaws.com/maven-repo-public-kineticdata.com/releases</url>
+            <id>z1_com.kineticdata.public</id>
+            <url>https://s3.amazonaws.com/maven-repo-public-kineticdata.com/releases</url>
         </repository>
     </repositories>
 
@@ -52,7 +54,7 @@
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
-            <version>42.2.16</version>
+            <version>42.3.3</version>
         </dependency>
         <dependency>
             <groupId>com.kineticdata.bridgehub.adapter</groupId>
